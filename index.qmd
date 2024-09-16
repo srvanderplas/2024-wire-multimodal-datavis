@@ -1,15 +1,6 @@
 ---
-title: Parallel Coordinate Plots
+title: "Multimodal Testing: Data Visualization and User Engagement"
 author:
-  - name: Heike Hofmann
-    orcid: 0000-0001-6216-5183
-    email: hhofmann4@unl.edu    
-    affiliations: 
-      - name: Statistics Department, University of Nebraska - Lincoln
-        address: 340 Hardin Hall North Wing
-        city: Lincoln
-        state: NE
-        postal-code: 68503
   - name: Susan Vanderplas
     email: svanderplas2@unl.edu
     orcid: 0000-0002-3803-0972
@@ -49,7 +40,72 @@ format:
 ---
  
 
-# Introduction 
+# Introduction
+Statistical graphics - charts, maps, and other data displays - are critical tools for communicating about data and statistical insights. 
+Charts provide qualitative insights [@gelmanInfovisStatisticalGraphics2013] into the general meaning behind the data we collect and the models we carefully fit and evaluate, allowing us to see in a flash the insights which result from numerical calculations well beyond what even the most talented individual could perform mentally. 
+@tukeyGraphicComparisonsSeveral1993 provides four principles for graphics, which I summarize as: 
+1) graphics are for qualitative/descriptive purposes, not quantitative (tables are better for accuracy), 
+2) graphics are for comparison, not access to individual amounts, 
+3) graphics are for impact, but not for something that has to be worked at hard to be perceived, and 
+4) graphics should report the results of careful data analysis, rather than the attempt to replace it. 
+
+@gelmanInfovisStatisticalGraphics2013 expounds on these points with examples, but when we consider whether a particular graphic is effective, points 1-3 in particular are important to consider. 
+We could even rephrase the principles to evaluate the effectiveness of a chart:
+
+- Does a chart allow us to describe the overall "gist" of the data accurately?
+- Does it facilitate making comparisons between displayed quantities? 
+- Does a chart require exceptional cognitive effort to use? 
+- Does the chart assist with understanding the results (and limitations) of the underlying data analysis?
+
+
+# Beyond Accuracy and Response Time
+
+Interestingly, much of the research into the perception of statistical graphics, including the seminal @cleveland1984, has focused on the estimation accuracy of quantities from the chart, with some papers additionally considering response time [@riceTestingPerceptualAccuracy2024;@xiongBiasedAveragePosition2020;@srinivasanWhatDifferenceEvaluating2018;@talbotFourExperimentsPerception2014;@zacksReadingBarGraphs1998]. 
+There is no dispute here: if numerical accuracy is the goal, tables are more effective than charts in every circumstance [@tukeyDataBasedGraphicsVisual1990;@gelmanWhyTablesAre2011;@bertiniWhyShouldnAll2020]. 
+More recently, discussions of accuracy have been framed as 'accurate enough to understand the insight' [@hillArePieCharts2024] -- that is, accuracy is important, but in the context of the patterns in the data and the conclusions and decisions made because of the chart. 
+Similarly, response time is not a good measure of cognitive effort, cognitive load, or whether a chart facilitates making the required comparisons.
+Measuring cognitive processes in a more direct way can provide useful insights [@huangTimeErrorCognitive2008].
+In addition, we seldom create charts with the intent that viewers spend as little time as possible looking at them. 
+While recording response time is not a bad idea, reading too much into it as a measure discounts concepts like "desirable difficulty" [@hullmanBenefittingInfoVisVisual2011] and may disincentivize one of the best things about graphics, according to Tukey - they force us to notice what we never expected to see. 
+In a study of uncertainty visualization experiments [@hullmanPursuitErrorSurvey2019], most of the 86 studies surveyed used error and response time as derived measures; the authors suggest more realistic protocols, including decision frameworks, participant explanations, and graphical elicitation (direct annotation) may provide richer data and reduce effects due to variation in participant numeracy. 
+These suggestions generalize beyond uncertainty visualization, and would benefit the wider field of graphical testing and visualization perception. 
+
+
+
+A series of perceptual and cognitive tasks must happen in quick succession for viewers to perceive, understand, and use  statistical charts. 
+Many different task-based taxonomies exist [@szafirFourTypesEnsemble2016;@saketTaskBasedEffectivenessBasic2019;@dimaraTaskBasedTaxonomyCognitive2020], each with a different basis set of tasks or approach to breaking down cognitive operations implicit within a given task[@brehmerMultiLevelTypologyAbstract2013]. 
+Most mention perceptual operations (clustering, variability, numerosity assessment) along with higher-level tasks that integrate contextual information (e.g. causal or statistical inference and decision-making). 
+Each individual task can be assessed by asking participants to identify the number of groups in the data, estimate numerical quantities, or indicate whether a summary statement is correct, providing some useful information. 
+However, it is difficult to assess the full set of perceptual and cognitive processes with any specific question, and different questions prompt users to examine different facets of the chart [@kosaraImpactDistributionChart2019], leading to conflicting experimental results.
+
+![**Levels of cognitive engagement with charts, roughly ordered by complexity, time, and effort.** Methods that effectively measure (or could be extended to measure) each stage are shown below the charts. Text annotations show examples of the types of cognitive operations involved in each stage.](figure/Chart-Perception-Process.png){#fig-cognition-hierarchy}
+
+Rather than add yet another set of individually measured cognitive tasks [@padillaDecisionMakingVisualizations2018;@padillaCaseCognitiveModels2018], in this review, we focus on user engagement level, as shown in @fig-cognition-hierarchy, roughly ordered by time and cognitive complexity. 
+This hierarchy includes tasks in different taxonomies, with examples of dependent cognitive operations at each stage, but the focus on user engagement with the patterns of data differentiates it from other task-based frameworks. 
+
+Integrating different measurement methods in graphical testing has the potential to provide insight into the temporal evolution of cognitive processes: eye tracking indicates visual attention, think-aloud responses indicate user train-of-thought, and direct annotation provides higher resolution spatial information than eye tracking, but with a temporal delay.
+Sequential numerical estimation and forced choice questions can be added to scaffold tasks, measuring specific outcomes while continuous measurement methods provide insight into the underlying cognitive processes. 
+Though we will focus on levels of user engagement, integrated testing methods can be used with any cognitive or sense-making framework. 
+For instance, under the NOVIS model [@leeHowPeopleMake2016a], a lineup could be used to assess whether unfamiliarity restricts identification of underlying differences in the data, with eye tracking and direct annotations supporting the original think-aloud method, and forced-choice or estimation assessing specific, measurable outcomes when using an unfamiliar visualization. 
+
+
+
+# An Historical Case Study: Pies or Bars?
+
+Almost 100 years ago, a sequence of papers experimentally examining the merits of pie and bar charts [@eellsRelativeMeritsCircles1926;@croxtonBarChartsCircle1927; @vonhuhnFurtherStudiesGraphic1927;@croxtonGraphicComparisonsBars1932] were published in the Journal of the American Statistical Association. 
+Even in this early stage of what we might call modern statistical graphics, pie charts were inexplicably popular but also derided, most pointedly by @karsten1923charts, who said "it might be construed as an insult to a man's intelligence to show him a pie chart", and Secrist, as quoted in @eellsRelativeMeritsCircles1926, as saying "A pie diagram is a clumsy and defective method of illustrating component parts". 
+These studies were primarily based on accuracy, though @eellsRelativeMeritsCircles1926 collected estimates from participants under time pressure as well as some indication of whether participants used area, arc length, chord length, or angle to make their estimates. 
+Estimates were obtained from in-class activities where students estimated regions of various charts [@eellsRelativeMeritsCircles1926;@croxtonBarChartsCircle1927;@croxtonGraphicComparisonsBars1932], though @vonhuhnFurtherStudiesGraphic1927 does not provide any information about how the new data presented in that paper was obtained. 
+In @eellsRelativeMeritsCircles1926 and @croxtonBarChartsCircle1927, participants estimated all component pieces of a chart, while in @vonhuhnFurtherStudiesGraphic1927 and @croxtonGraphicComparisonsBars1932, participants estimated the ratio of the size of two items. 
+These two estimation tasks have different stimulus-response curves [@vareyJudgmentsProportions1990], which helps to explain why, even after this sequence of 4 studies, there is little experimental consensus on whether pie charts or bar charts are superior. 
+Studies where participants estimate proportions find an advantage to pie charts when there are a small number of categories [@croxtonBarChartsCircle1927;@eellsRelativeMeritsCircles1926], but when participants estimate the ratio between two parts of a chart, experimenters draw the opposite conclusion [@vonhuhnFurtherStudiesGraphic1927]. 
+The underlying area judgments outside of the chart context suggest that bar charts are more accurate than estimation of circular area [@croxtonGraphicComparisonsBars1932], but when the rectangles are no longer aligned, estimates are similarly area-prone. 
+
+Ultimately, however, this sequence of experiments is illustrative from another perspective: by examining estimation accuracy down to percentage point errors, the pies vs. bars debate misses the forest for the trees. 
+What matters should be whether participants ultimately can reach the correct conclusion about the data, comparing aspects of the data across multiple charts or in other real-world scenarios. 
+Raw accuracy is important only in that it is an input to the cognitive engagement process outlined in @fig-cognition-hierarchy: the numerical estimates must be integrated with domain knowledge, assessed for congruence with prior beliefs, compared across categories, subjected to visually-driven inference, and finally, applied to real-world decisions. 
+
+
 
 # Conclusion
 
