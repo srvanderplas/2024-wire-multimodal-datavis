@@ -1,1 +1,2 @@
-# 2024-wire-multimodal-datavis
+# Multimodal Data Visualization and User Engagement
+
