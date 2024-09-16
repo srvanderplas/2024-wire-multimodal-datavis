@@ -1,0 +1,58 @@
+---
+title: Parallel Coordinate Plots
+author:
+  - name: Heike Hofmann
+    orcid: 0000-0001-6216-5183
+    email: hhofmann4@unl.edu    
+    affiliations: 
+      - name: Statistics Department, University of Nebraska - Lincoln
+        address: 340 Hardin Hall North Wing
+        city: Lincoln
+        state: NE
+        postal-code: 68503
+  - name: Susan Vanderplas
+    email: svanderplas2@unl.edu
+    orcid: 0000-0002-3803-0972
+    affiliations: 
+      - name: Statistics Department, University of Nebraska - Lincoln
+        address: 340 Hardin Hall North Wing
+        city: Lincoln
+        state: NE
+        postal-code: 68503
+abstract: |
+  Abstract text here
+
+bibliography: refs.bib
+csl: apa.csl
+
+mainfont: Helvetica
+monofont: Roboto
+number-depth: 2
+number-sections: true
+
+execute: 
+  echo: false
+
+header-includes:
+   - \usepackage[dvipsnames]{xcolor} % colors
+   - \newcommand{\rr}[1]{{\textcolor{blue}{#1}}}
+   - \newcommand{\svp}[1]{{\textcolor{RedOrange}{#1}}}
+   - \newcommand{\hh}[1]{{\textcolor{Green}{#1}}}
+   - \newcommand{\dc}[1]{{\textcolor{Purple}{#1}}}
+
+date: last-modified
+
+format:  
+  pdf:
+    keep-tex: true
+    fontsize: 10pt
+---
+ 
+
+# Introduction 
+
+# Conclusion
+
+
+
+\clearpage
